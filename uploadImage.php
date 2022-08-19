@@ -12,7 +12,7 @@ $msg = "";
     $type = $_FILES['uploadfile']['type'];
     $basefile = basename($filename);
     $info = pathinfo($basefile);
-    $extension = $info['extension'];
+    $extension = strtolower($info['extension']);
     //$temp = explode(".", $_FILES["uploadfile"]["name"]);
     $newfilename = round(microtime(true));// . '.' . end($temp);
     $fname = $newfilename.'-'.$filename;
@@ -24,7 +24,7 @@ $msg = "";
     //echo $sql;
     // Execute query
     if(mysqli_query($con,$sql)){
-        if (move_uploaded_file($_FILES["uploadfile"]["tmp_name"], "./image/" . $fname)) {
+        if (move_uploaded_file($_FILES["uploadfile"]["tmp_name"], "D:/Installer/" . $fname)) {
             //echo "<h3>  Image uploaded successfully!</h3>";
             header ("location:index.php");
         } else {

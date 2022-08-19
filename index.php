@@ -28,7 +28,7 @@
         while ($data = mysqli_fetch_assoc($result)) {
     ?>
         <!--<a href="download.php?path=image/<//?php echo $data['filename12']; ?>"><img src="./image/<//?php echo $data['filename12']; ?>"></a>-->
-        <a href="download.php?path=image/<?php echo $data['filename12']; ?>"><?php echo (explode('-',$data['filename12']))[1];?></a>-----<?php echo $data['filetype12'];?><br/>
+        <a href="download.php?path=D:/Installer/<?php echo $data['filename12']; ?>"><?php echo (explode('-',$data['filename12']))[1];?></a>-----<?php echo $data['filetype12'];?><br/>
  
     <?php
         }
